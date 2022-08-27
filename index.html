@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number verification with OTP</title>
+    <style>
+    .container {
+		width: 302px;
+		height: 175px;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+		margin: auto;
+	}
+	#number, #verificationcode {
+		width: calc(100% - 24px);
+		padding: 10px;
+		font-size: 20px;
+		margin-bottom: 5px;
+		outline: none;
+	}
+	#recaptcha-container {
+		margin-bottom: 5px;
+	}
+	#send, #verify {
+		width: 100%;
+		height: 40px;
+		outline: none;
+	}
+	.p-conf, .n-conf {
+		width: calc(100% - 22px);
+		border: 2px solid green;
+		border-radius: 4px;
+		padding: 8px 10px;
+		margin: 4px 0px;
+		background-color: rgba(0, 249, 12, 0.5);
+		display: none;
+	}
+	.n-conf {
+		border-color: red;
+		background-color: rgba(255, 0, 4, 0.5);
+	}
+</style>
+</head>
+<body>
+    <div class="container">
+		<div id="sender">
+			<input type="text" id="number" placeholder="+91...">
+			<div id="recaptcha-container"></div>
+			<input type="button" id="send" value="Send" onClick="phoneAuth()">
+		</div>
+		<div id="verifier" style="display: none">
+			<input type="text" id="verificationcode" placeholder="OTP Code">
+			<input type="button" id="verify" value="Verify" onClick="codeverify()">
+			<div class="p-conf">Number Verified</div>
+			<div class="n-conf">OTP ERROR</div>
+		</div>
+	</div>
+    <div class=""></div>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+    <script>
+        const firebaseConfig = {
+    apiKey: "AIzaSyBvsros6SEoWwi7IPIRcGLy1-qyMMwrfMk",
+    authDomain: "phone-auth-20137.firebaseapp.com",
+    projectId: "phone-auth-20137",
+    storageBucket: "phone-auth-20137.appspot.com",
+    messagingSenderId: "750578264792",
+    appId: "1:750578264792:web:120b10a86991181b2285ad",
+    measurementId: "G-0D22FRK5S1"
+};
+firebase.initializeApp(firebaseConfig);
+render();
+function render(){
+	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+	recaptchaVerifier.render();
+}
+	// function for send message
+function phoneAuth(){
+	var number = document.getElementById('number').value;
+	firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function(confirmationResult){
+		window.confirmationResult = confirmationResult;
+		coderesult = confirmationResult;
+		document.getElementById('sender').style.display = 'none';
+		document.getElementById('verifier').style.display = 'block';
+	}).catch(function(error){
+		alert(error.message);
+	});
+}
+	// function for code verify
+function codeverify(){
+	var code = document.getElementById('verificationcode').value;
+	coderesult.confirm(code).then(function(){
+		window.location.href="nisa_food.html";
+	}).catch(function(){
+		document.getElementsByClassName('p-conf')[0].style.display = 'none';
+		document.getElementsByClassName('n-conf')[0].style.display = 'block';
+	})
+}
+    </script>
+</body>
+</html>

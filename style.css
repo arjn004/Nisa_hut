@@ -1,0 +1,128 @@
+body{
+    text-align: center;
+    padding:0%;
+    margin: 0%;
+}
+.heaing{
+    margin: 0;
+    padding: 0;
+    color: grey;
+}
+.heading img{
+    border-radius: 100px;
+}
+.Nisa{
+    display: inline-block;
+    height: 5%;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    font-size: 45px;
+    text-align: left;
+    color: orangered;
+}
+.time{
+    display: inline-block;
+    height:20%;
+    width: 10%;
+}
+.Nissa{
+    margin: 0;
+    padding: 0;
+    text-align:left;
+    color: darkgrey;
+    padding-left: 63px;
+}
+.time{
+    color:grey;
+}
+.heading #boss{
+    color:grey;
+    text-align: left;
+    padding-left: 63px;
+}
+.heading p{
+    font-size: 30px;
+}
+.address{
+    font-size: 45px;
+    text-align: left;
+    color: brown;
+    padding-left: 63px;
+}
+.hyper p{
+    color:grey;
+    text-align: left;
+    font-size: 30px;
+    padding-left: 63px;
+}
+.hyper img{
+    border-radius: 40px;
+    width: 80%;
+}
+.review{
+    height:200px;
+    text-align: center;
+    margin:0;
+    padding:0;
+    border-radius: 15px;
+    background-color: rgb(245, 208, 177);
+    margin: 40px;
+    padding-left: 20px;
+}
+.review h1{
+    padding-left: 20px;
+    text-align: left;
+    color:orangered;
+}
+.review h2{
+    padding-left: 20px;
+    text-align: orange;
+}
+.reviews h1{
+    margin-left: 40px;
+    margin: 0;
+    padding: 0;
+    font-size: 45px;
+    text-align: left;
+    color: rgb(253, 166, 5);
+}
+.hii{
+    margin: 0px;
+    padding-left:20px;
+    color:brown;
+}
+.review p{
+    color:grey;
+    text-align: left;
+    font-size: 30px;
+}
+.reviews h2{
+    margin-top: 0px;
+    margin-left: 0px;
+    color:orange;
+    text-align: left;
+    font-size: 30px;
+    padding-left: 0px;
+}
+.headings{
+    color:orange;
+}
+#rating{
+    color:rgb(223, 17, 51);
+    border-style: dashed;
+    text-align: center;
+    align-items: center;
+}
+.wq{
+    color:grey;
+    text-align: left;
+    padding-left: 63px;
+    margin: 0px;
+}
+.wq h1{
+    font-size: 45px;
+}
+.wq h2{
+    font-size: 35px;
+}
